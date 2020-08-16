@@ -1,0 +1,85 @@
+<link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet"> 
+<ion-content padding >
+  <ion-col col-4></ion-col>
+  <!-- <login-form> -->
+  <form #loginForm="ngForm" novalidate>
+    <!-- <ion-card > -->
+    <div id="logo" padding text-center>
+     <ion-img src="../assets/imgs/name1.png" height="123" width="200"></ion-img>
+      <!-- <ion-label id ="head">MOIM</ion-label> -->
+      <br><br>
+    </div>
+  
+        
+        <ion-grid (loginStatus)="gotoTabs($event)">
+       
+            <ion-input name="email" #email="ngModel"
+             required type="text" pattern="[a-zA-Z0-9!#$%&'*+/=?^_`{\}~-]+(?:\.[a-zA-Z0-9!#$%&'*+/=?^_`{\}~-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9]*[a-zA-Z0-9])?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?"
+             [(ngModel)]="account.email" placeholder="email" padding-left>
+             
+            </ion-input>
+  
+            <div padding='2px 16px 16px 16px;' *ngIf="email.invalid && email.dirty">
+              <span class="global__input-error">Email address is not valid</span>
+            </div>
+  
+            <ion-input 
+            name="password"
+            type="password"
+            #password="ngModel"
+            required pattern="[a-zA-Z0-9!@#$%^&*]{6,20}$"
+             [(ngModel)]="account.password" placeholder="password" name="password" padding-left></ion-input>
+  
+             <div padding  *ngIf="password.invalid && password.dirty">
+              <span class="global__input-error">Password must be at least 6 characters.</span>
+            </div>
+           <div padding text-center>
+            <button [disabled]="loginForm.invalid"
+            ion-button round  color="primary"   (click)="gotoTabs(account)">
+             LOGIN 
+            
+            </button>
+          </div>
+      
+        <!-- <label text-center>
+        <ion-grid>
+          <ion-row>
+            <ion-col col-9> Don't have any account?</ion-col>
+            <ion-col col-3 (click)="gotoSignUp()" id='c' ><p color="primary">Sign up</p></ion-col>
+          </ion-row>
+         
+        </ion-grid>
+   </label> -->
+     </ion-grid>
+     <label text-center>
+        <ion-grid>
+          <ion-row>
+            <ion-col> Don't have any account?</ion-col>
+            
+          </ion-row>
+          <ion-row>
+          <ion-col (click)="gotoSignUp()" id='c' ><p color="primary">Register</p></ion-col>
+         </ion-row>
+        </ion-grid>
+   </label>
+      
+  <!-- </ion-card> -->
+</form>
+
+<!-- </login-form> -->
+</ion-content>
+<ion-footer>
+    <!-- <label text-center>
+        <ion-grid>
+          <ion-row>
+            <ion-col> Don't have any account?</ion-col>
+            
+          </ion-row>
+          <ion-row>
+          <ion-col (click)="gotoSignUp()" id='c' ><p color="primary">Register</p></ion-col>
+         </ion-row>
+        </ion-grid>
+   </label> -->
+
+</ion-footer>
+

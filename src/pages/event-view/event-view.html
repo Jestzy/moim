@@ -1,0 +1,101 @@
+<!--
+  Generated template for the EventViewPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header transparent >
+
+  <ion-navbar  color='primary'>
+    <ion-row>
+    <ion-col>
+   <ion-title>Event</ion-title>
+    </ion-col>
+   <ion-col no-padding *ngIf='event && (event.uid ==  myuid);'>
+      <ion-buttons end>
+          <button ion-button icon-only (click)='delete(event.keyid)'>
+            <ion-icon name="ios-trash"></ion-icon>
+          </button>
+        </ion-buttons>
+      </ion-col>
+      <!-- <ng-template #Unlove >
+          <ion-buttons end>
+              <button ion-button icon-only (click)='deletelove(event.keyid)'>
+                <ion-icon name="ios-trash"></ion-icon>
+              </button>
+            </ion-buttons>
+      </ng-template> -->
+    </ion-row>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+    <div #map id="map" ><div class="centerMarker" ></div></div>
+  <br>
+  <div *ngIf="event" padding style="padding-left:30px;">
+    <div>
+      <h2>{{event.eventname}}</h2> 
+    </div>
+
+      <ion-list>
+        <div>
+      <p>event detail<p>
+      <div padding-left>
+      <h6>{{event.detail}}</h6>
+    </div>
+    </div>
+      <br>
+        <ion-row>
+            <ion-col >
+                <button ion-button icon-start clear color="primary">
+                  <ion-icon name="calendar"></ion-icon>
+                  <div>{{blank}}{{event.date}}{{blank}}2019</div>
+                </button>
+                <button ion-button icon-start clear  color="primary">
+                    <ion-icon name="ios-clock"></ion-icon>
+                    <div>{{blank}}{{event.time}}</div>
+                  </button><br>
+                  <button ion-button icon-start clear   color="primary">
+                    <ion-avatar class='blue'>
+                      <img src="../../assets/cat/{{event.category}}.png" width='20px' height='20px'>
+                    </ion-avatar>
+                      <div>{{blank}}{{event.category}}</div>
+                    </button>
+              </ion-col>
+            </ion-row>
+      <ion-row no-padding>
+          <div class="margin" padding text-right style="font-style: oblique">{{event.owner}} <br> 
+            <p color="c-light" style='font-size: 0.6em'>posted when{{event.posttime}}</p>
+          </div>
+          <div class="profile-picture big-profile-picture">
+          <ion-avatar (click)='viewProfile(event.uid)'>
+              <!-- <div  padding>{{event.owner}} <br> <p color="c-light">{{event.posttime}}</p></div> -->
+              <img src="../../assets/avatar/{{event.avatar}}.png" >
+            </ion-avatar>
+          </div>
+            <!-- <div  padding>{{event.owner}}</div> -->
+            
+      </ion-row>
+        </ion-list>
+    </div>
+ 
+</ion-content>
+
+
+<ion-footer transparent no-border>
+    <ion-toolbar transparent>
+ <!-- <ion-buttons (click)='OpenChat(event.uid,event.keyid)' padding> -->
+    <div *ngIf='event && (event.uid ==  myuid); else Show'>
+      <button ion-button round padding  (click)='viewWholove(event.keyid)' >
+        <div>See who moim this event</div> 
+      </button>
+      </div>
+      <ng-template #Show>
+          <button ion-button round padding  (click)='OpenChat(event.uid,event.keyid,event)' >
+              <ion-icon name="heart" class='marginright'></ion-icon><div>moim</div> 
+          </button>
+      </ng-template>
+  <!-- </ion-buttons> -->
+</ion-toolbar>
+</ion-footer>

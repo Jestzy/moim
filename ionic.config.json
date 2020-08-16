@@ -1,0 +1,7 @@
+{
+  "name": "moim",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

@@ -1,0 +1,81 @@
+<!--
+  Generated template for the Chat1to1Page page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Chat</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <div class="message-wrap">
+
+    <div *ngFor="let message of messageList | async"  > 
+
+      <div *ngIf="message.userToId === userId ; else right" class="sender">
+
+        <ion-grid>
+          <ion-row>
+            <ion-col col-2 text-left>
+              <img src="../assets/avatar/{{message?.userFromProfile.avatar}}.png"  class="friend-img" (click)='viewProfile(message.userFromId)'>
+            </ion-col>
+            <ion-col col-6>
+              <p>{{message.content}}</p>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+      <ng-template #right>
+      <div class="me" >
+        <ion-grid>
+          <ion-row>
+              <ion-col  col-6>
+                  <!-- <p item-end>I'm fine. and you?</p> -->
+                </ion-col>
+            <ion-col  col-6>
+              <p item-end>{{message.content}}</p>
+            </ion-col>
+            <!-- <ion-col col-2>
+              <img src="https://img.mobiscroll.com/demos/mr-profile1.png"  class="friend-img">
+            </ion-col> -->
+          </ion-row>
+        </ion-grid>
+      </div>
+    </ng-template>
+    </div>
+  </div>
+
+</ion-content>
+
+<ion-footer >
+  <ion-toolbar color="primary">
+    <!-- <ion-textarea   placeholder="Enter your message" name="message"></ion-textarea>
+    <ion-buttons end>
+      <button  ion-button icon-only >
+        <ion-icon name="send" color="light"></ion-icon>
+      </button>
+    </ion-buttons> -->
+    <ion-grid>
+      <ion-row>
+        <ion-col col-10>
+          <ion-input name='content' type="text" placeholder="Enter message.." [(ngModel)]="a"></ion-input>
+        </ion-col>
+
+        <ion-col col-2>
+          <button  ion-button icon-only (click)='sendMessage(a)' clear>
+            <ion-icon name="send" color="light"></ion-icon>
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+
+</ion-footer>
+

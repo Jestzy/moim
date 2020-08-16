@@ -1,0 +1,52 @@
+
+
+
+<ion-content padding>
+      <ion-list >
+       
+        <div *ngIf="this.edit === 'edit'">
+            <button ion-button clear icon-only  top right edge (click)="backToMain()">
+                <ion-icon name="close" color="dark"></ion-icon>
+              </button>
+          </div>
+        <div padding>
+            <h1 >Profile</h1>
+            <p>tell us your information.</p>
+            <p>So we can know who you are.</p>
+            <br>
+        </div>
+            <div class="profile-picture big-profile-picture" >
+                <img src="../../assets/avatar/{{avatar}}.png">
+              </div>
+
+      <form #editForm="ngForm" novalidate>
+          <ion-item>
+              <ion-label  stacked>Nickname</ion-label>
+              <ion-input  type="text" #name="ngModel" name='name'
+              required [(ngModel)]="profile.name"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label stacked>Date of Birth</ion-label>
+                <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="profile.dateOfBirth" #dateOfBirth="ngModel" name='dateOfBirth'
+                required></ion-datetime>
+            </ion-item>
+            <ion-item>
+              <ion-label stacked>Gender</ion-label>
+              <ion-select [(ngModel)]="profile.gender"  #gender="ngModel" name='gender' required>
+                <ion-option>Male</ion-option>
+                <ion-option>Female</ion-option>
+              </ion-select>
+            </ion-item>
+            <ion-item>
+                <ion-label stacked>About me</ion-label>
+                <ion-input type="text" [(ngModel)]="profile.aboutme" #aboutme="ngModel" name='aboutme'
+                required></ion-input>
+              </ion-item>
+              <br>
+              <div padding text-center>
+              <button ion-button round [disabled]="editForm.invalid" (click)="saveProfile()">Save</button>
+            </div>
+            </form>
+            </ion-list>
+
+</ion-content>

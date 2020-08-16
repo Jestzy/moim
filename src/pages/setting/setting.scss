@@ -1,0 +1,40 @@
+page-setting {
+  .scroll-content {
+    overflow-y: hidden;
+}
+    .profile-item {
+        text-align: center;
+        background-color: color($colors, primary);
+      }
+      
+      .profile-picture {
+        border: 1px solid rgba(255, 255, 255, 0.741);
+        padding: 3px;
+        border-radius: 100%;
+        -webkit-box-sizing: content-box;
+        -moz-box-sizing: content-box;
+        box-sizing: content-box;
+        margin: 0 auto;
+        width: 100px;
+        height: 100px;
+        overflow: hidden;
+      }
+      
+      .profile-picture img {
+        width: 128px;
+        border-radius: 100%;
+      }
+      
+      .profile-name {
+        padding-top: 20px;
+        font-size: x-large !important;
+        font-weight: bold !important;
+        text-transform: capitalize;
+      }
+      .seperate{
+      color: white;
+      }
+      .name{
+        color: white;
+      }
+}

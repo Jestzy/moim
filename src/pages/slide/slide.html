@@ -1,0 +1,31 @@
+<ion-content class="tutorial-page">
+
+  <ion-slides pager>
+    <ion-slide *ngFor="let slide of slides">
+      <ion-toolbar>
+        <ion-buttons end>
+          <button ion-button color="primary" (click)="gotoLogIn()">Skip</button>
+        </ion-buttons>
+      </ion-toolbar>
+      <img [src]="slide.image" class="slide-image"/>
+      <h2 class="slide-title" [innerHTML]="slide.title" color="primary"></h2>
+      <p [innerHTML]="slide.description"></p>
+    </ion-slide>
+    <ion-slide>
+      <ion-toolbar>
+      </ion-toolbar>
+      <img src="../assets/imgs/slide3.png" class="slide-image"/>
+      <h2 class="slide-title">Ready to Play?</h2>
+      <p>Many activities are waiting for you....</p>
+      <button  ion-button round  color="primary" color="primary" (click)="gotoLogIn()">
+        Let's Go
+        <!-- <ion-icon name="arrow-forward"></ion-icon> -->
+      </button>
+      <!-- <button [disabled]="loginForm.invalid"
+            ion-button round  color="primary"   (click)="gotoTabs(account)">
+             LOGIN 
+            
+            </button> -->
+    </ion-slide>
+  </ion-slides>
+</ion-content>

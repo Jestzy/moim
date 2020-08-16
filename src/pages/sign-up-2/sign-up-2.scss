@@ -1,0 +1,19 @@
+page-sign-up-2 {
+    .scroll-content {
+        overflow-y: hidden;
+    }
+
+    ion-icon{
+            font-size: 4em;
+    }
+    ion-button{
+        background-color: linear-gradient(to top, #ff5f6d, #ffc371);
+    }
+    ion-toolbar{
+        text-align: center;
+        background-color: color($colors,c-blue);
+    }
+    ion-content{
+        background-color: color($colors,c-blue);
+    }
+}

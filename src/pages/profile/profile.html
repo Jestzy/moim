@@ -1,0 +1,52 @@
+<!--
+  Generated template for the ProfilePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color='primary'>
+    <ion-title>Who moim this event</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div *ngFor='let item of result; let i = index'>
+    <!-- <div  *ngFor='let index of result'> -->
+    <ion-list no-lines>
+        <ion-item-sliding>
+          <ion-item (click)='viewProfile(i)'>
+            <ion-avatar item-start>
+                <img src="../../assets/avatar/{{item.avatar}}.png" >
+            </ion-avatar>
+            <h2>{{item.name}}</h2>
+         
+          </ion-item>
+          <!-- <ion-item-options side="left">
+            <button ion-button color="primary">
+              <ion-icon name="message"></ion-icon>
+              Text
+            </button>
+            <button ion-button color="secondary">
+              <ion-icon name="profile"></ion-icon>
+              Call
+            </button> -->
+          <!-- </ion-item-options> -->
+          <ion-item-options side="right">
+            <!-- <button ion-button color="primary" >
+              <ion-icon name="person"></ion-icon>
+              Profile
+            </button> -->
+            <button ion-button color="primary" (click)='chat(i)'>
+                <ion-icon name="text"></ion-icon>
+                Chat
+              </button>
+          </ion-item-options>
+        </ion-item-sliding>
+      </ion-list>
+      </div>
+    <!-- </div> -->
+</ion-content>

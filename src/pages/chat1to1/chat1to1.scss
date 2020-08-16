@@ -1,0 +1,64 @@
+page-chat1to1 {
+    .grid {
+        padding: 0;
+      }
+    
+      .sender, .me {
+        .friend-img {
+          position: absolute;
+          border-radius: 40px;
+          width: 40px;
+          height: 40px;
+          box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+          
+        }
+        p {
+          border-radius: 10px;
+          // border-bottom-left-radius: 0;
+          margin: 0;
+        }
+      }
+    
+    
+      .sender {
+        p {
+          text-align: left;
+          border-bottom-left-radius: 0;
+          color: #fff;
+          background-color: color($colors, c-pink);
+          padding: 12px 10px;
+          // border: 1px solid #d1d1d1;
+        }
+        .friend-img {
+          margin: 0 0;
+        }
+      }
+    
+    
+      .me {
+        .txt {
+          display: inline;
+          text-align: right;
+        }
+        .friend-img {
+          margin: 0 22px;
+        }
+        p {
+          text-align: right;
+          border-bottom-right-radius: 0;
+          background-color: color($colors, primary);
+          color: #fff;
+          padding: 12px 10px;
+        }
+      }
+    
+      .text-input {
+        background-color: #fff;
+        border-radius: 5px;
+        padding: 5px;
+      }
+    //   .scroll-content {
+    //     overflow-y: hidden;
+    // }
+
+}

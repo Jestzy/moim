@@ -1,0 +1,165 @@
+<ion-header>
+
+    <ion-navbar color="primary">
+      <ion-title>Create Event</ion-title>
+      <!-- <ion-buttons end>
+        <button ion-button icon-only (click)='do()'>
+          <ion-icon name="md-navigate"></ion-icon>
+        </button>
+        </ion-buttons> -->
+    </ion-navbar>
+    <!-- <ion-buttons end>
+      <button ion-button icon-only (click)='do()'>
+        <ion-icon name="ios-locate-outline"></ion-icon>
+      </button> -->
+   
+    <!-- </ion-buttons> -->
+  
+  </ion-header>
+  
+<ion-content padding >
+
+
+<!-- <button ion-button clear icon-only  top right edge (click)="backToMain()">
+  <ion-icon name="close" color="dark"></ion-icon>
+</button> -->
+<ion-grid>
+    <form #createForm="ngForm" novalidate>
+  <!-- <ion-row justify-content-center align-items-center> -->
+<!-- <ion-card > -->
+  <ion-list padding>
+    <h4 class="head">Create your event</h4>
+    <!-- <ion-label class="head">Account</ion-label> -->
+    <p>share your event to the world!</p><br>
+    <!-- <p>please give us some detail</p><br> -->
+   <!-- <ion-item> -->
+     
+        <ion-label >Title</ion-label>
+        <ion-input type="text" required [(ngModel)]="eventItem.eventname" name="eventname" #eventname='ngModel'></ion-input>
+      <!-- </ion-item> -->
+      <ion-label >Detail</ion-label>
+            <ion-textarea type="text"  [(ngModel)]="eventItem.detail" name="detail"  required
+            name='detail'
+            #detail='ngModel'></ion-textarea>
+  
+    <!-- </ion-list> -->
+    <!-- <ion-list > -->
+      <!-- <ion-item> -->
+          <!-- <ion-label>Where</ion-label>
+          <ion-input type="text" [(ngModel)]="eventItem.map" name="map"></ion-input> -->
+        <!-- </ion-item> -->
+      <!-- </ion-list> -->
+
+        <!-- <ion-grid>
+          <ion-row>
+            <ion-col col-6> -->
+         
+      
+            <!-- <ion-label >Time</ion-label> -->
+            <!-- </ion-col> -->
+            <!-- <ion-col col-6> -->
+                <ion-item  no-lines >
+                  
+                    <ion-label>Date</ion-label>
+                            <ion-datetime displayFormat="D MMM YYYY"
+                             pickerFormat="D MMM YYYY" 
+                             [(ngModel)]="eventItem.date" 
+                             placeholder=" .... " 
+                            [min]='2019'
+                            [max]= '2020'
+                            required
+                            name='date'
+                            #date='ngModel'
+                             ></ion-datetime>
+                       
+                            </ion-item>
+                <ion-item  no-lines >
+                  
+            <ion-label>Time</ion-label>
+                    <ion-datetime displayFormat="HH:mm" pickerFormat="HH:mm" [(ngModel)]="eventItem.time" placeholder=" .... " 
+                    required
+                    name='time'
+                    #time='ngModel'></ion-datetime>
+               
+                    </ion-item>
+                  
+            <!-- </ion-col> -->
+          <!-- </ion-row>
+        </ion-grid> -->
+        <!-- <ion-grid>
+            <ion-row>
+              <ion-col col-4> -->
+                  <!-- <ion-label >Catergory</ion-label> -->
+        <!-- <ion-item  no-lines >
+       
+            <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="eventItem.time" placeholder="...." ></ion-datetime>
+       
+            </ion-item> -->
+          <!-- </ion-col> -->
+          
+
+          <!-- <ion-col col-8> -->
+              <!-- <ion-label >Catergory</ion-label><br> -->
+              <!-- <ion-label >Catergory</ion-label> -->
+            <ion-item no-lines >
+                <ion-label >Category</ion-label>
+              <ion-select  [(ngModel)]="eventItem.category"   required
+              name='category'
+              #category='ngModel'>
+                <ion-option value='Eating'>Eating</ion-option>
+                <ion-option value='Entertainment'>Entertainment</ion-option>
+                <ion-option value='Excercise'>Excercise</ion-option>
+                <ion-option value='Education'>Education</ion-option>
+                <ion-option value='Shopping'>Shopping</ion-option>
+                <ion-option value='Travel'>Travel</ion-option>
+                
+
+              </ion-select>
+            </ion-item>
+            <br>
+          <!-- </ion-col> -->
+        <!-- </ion-list> -->
+      <!-- </ion-row> -->
+    <!-- </ion-grid> -->
+      <!-- <ion-list > -->
+        <!-- <ion-item> -->
+            <!-- <ion-label >Detail</ion-label>
+            <ion-textarea type="text"  [(ngModel)]="eventItem.detail" name="detail"  required
+            name='detail'
+            #detail='ngModel'></ion-textarea> -->
+
+          <div text-center>
+              <button 
+              ion-button round [disabled]="createForm.invalid" color="primary"  (click)="addEventItem(eventItem)">
+               Create
+              
+              </button>
+            </div>
+        </ion-list>
+     
+        <!-- <div text-center>
+            <button 
+            ion-button round  color="primary"  (click)="addEventItem(eventItem)">
+             Create
+            
+            </button>
+          </div> -->
+<!-- </ion-row> -->
+</form>
+</ion-grid>
+<!-- <div padding text-center>
+    <button 
+    ion-button round  color="primary"  (click)="addEventItem(eventItem)">
+    <ion-icon name="arrow-back" padding-right></ion-icon> Create
+    
+    </button>
+  </div> -->
+</ion-content>
+<!-- 
+<ion-footer>
+  <ion-toolbar>
+<ion-buttons>
+  <button ion-button block (click)="addEventItem(eventItem)">ok</button>
+</ion-buttons>
+</ion-toolbar>
+</ion-footer> -->

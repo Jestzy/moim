@@ -1,0 +1,57 @@
+<!--
+  Generated template for the SignUpPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header no-border>
+  <ion-navbar transparent>
+  </ion-navbar>
+</ion-header>
+
+
+
+
+
+<ion-content padding>
+  <div padding>
+    <ion-list>
+    
+    <h1 class="head">Register</h1>
+   
+    <p>let sign up and become the member of moim</p>
+    <p>please give us some detail</p><br>
+
+<form #regis='ngForm' novalidate>
+ <ion-label>EMAIL</ion-label>
+ <ion-input type="email" [(ngModel)]="account.email" #email="ngModel"
+ required type="text" pattern="[a-z0-9!#$%&'*+/=?^_`{\}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{\}~-]+)*@(?:[a-z0-9](?:[a-z0-9]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
+ placeholder="Your Email Address" name="email"></ion-input>
+
+ <ion-label>PASSWORD</ion-label>
+ <ion-input type="password"  [(ngModel)]="account.password"
+ required pattern="[a-zA-Z0-9!@#$%^&*]{6,20}$"
+ placeholder="Your Password" name="password" #password="ngModel"></ion-input>
+
+ <ion-label>CONFIRM PASSWORD</ion-label>
+ <ion-input type="password" [(ngModel)]="confirm"
+ required pattern="[a-zA-Z0-9!@#$%^&*]{6,20}$"
+ placeholder="Confirm Password" name="confirmPassword" #confirmPassword='ngModel'></ion-input>
+ <div padding  *ngIf="password.invalid && password.dirty">
+  <span class="global__input-error">Password must be at least 6 characters.</span>
+</div>
+<div padding  *ngIf="account.password != confirm ">
+  <span class="global__input-error">Password  not match.</span>
+</div>
+<div padding text-center>
+    <button [disabled]="regis.invalid && (account.password != confirm)"
+    ion-button round  color="primary"  (click)='gotoSignUp2(avatar)'>
+     Register
+    
+    </button>
+  </div>
+</form>
+</ion-list>
+</div>
+</ion-content>
+

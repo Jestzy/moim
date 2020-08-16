@@ -1,0 +1,124 @@
+page-event-today {
+    ion-content{
+        font-family: 'roboto' !important;
+      }
+      // image-size{
+      //   height: 100%;
+      // }
+       ion-card {
+          border-radius: 200px;
+          border-radius: 25px !important;
+          // background-color: rgb(226, 186, 186) !important;
+         
+          }
+          .main{
+            box-shadow: 0 4px 2px 0 rgba(0, 0, 0, 0.2) !important;
+          }
+        //  .datetime{
+        //    color: rgb(255, 255, 255) !important;
+        //   border-radius: 10px !important;
+        //   background-color: #ea6852!important;
+        //  }
+          .slide-title {
+            margin-top: 0rem;
+            color: rgb(56, 58, 59);
+            padding: 0px;
+          }
+          #text{
+            color: aliceblue;
+          }
+          // ion-fab{
+          //   box-shadow: 0 4px 2px 0 rgba(0, 0, 0, 0.2) !important;
+          // }
+          .carda{
+            box-shadow: 0 4px 2px 0 rgba(0, 0, 0, 0.2) !important;
+          }
+        //  #image-size{
+        //   background-size: cover;
+        //   }
+          // ion-img{
+          // height:300;
+          // width: 100%;
+          // }
+            .margin{
+          margin: 0 0 0 0;
+        }
+        .profile-picture {
+          border: 1px solid rgba(0, 0, 0, 0.25);
+          padding: 3px;
+          border-radius: 100%;
+          // -webkit-box-sizing: content-box;
+          // -moz-box-sizing: content-box;
+          // box-sizing: content-box;
+          margin: 0 0 0 0;
+          width: 70px;
+          height: 70px;
+          overflow: hidden;
+        }
+        .Education{
+          background-color: #80cecc !important;
+          ion-item{
+            background-color: #80cecc !important;
+          }
+        }
+        .Excercise{
+          background-color: #d5ad97 !important;
+          ion-item{
+            background-color: #d5ad97  !important;
+          }
+        }
+         
+        .Shopping{
+          background-color: #a4cca3 !important;
+          ion-item{
+            background-color: #a4cca3  !important;
+          }
+        }
+        .Eating{
+          background-color: #ec9bad !important;
+          ion-item{
+            background-color: #ec9bad  !important;
+          }
+        }
+        .Travel{
+          background-color: #efd8bd !important;
+          ion-item{
+            background-color: #efd8bd  !important;
+          }
+        }
+        .Entertainment{
+          background-color: #f7c986!important;
+          ion-item{
+            background-color: #f7c986  !important;
+          }
+        }
+        
+       
+        
+        .profile-picture img {
+          width: 70px;
+          border-radius: 100%;
+        }
+        .datetime{
+         font-weight: bold !important;
+          color: #ea6852 !important;
+          h3, h6{
+            color: #ea6852 !important;
+          }
+        }
+  
+  
+        .padd1{
+          padding-top: 5px;
+        }
+        h2{
+          color: white !important;
+        }
+        image-size{
+          height: 200px !important;
+        }
+        ion-icon{
+          color: aliceblue;
+        }
+
+}

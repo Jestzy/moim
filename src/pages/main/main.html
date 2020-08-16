@@ -1,0 +1,146 @@
+
+<ion-header >
+     
+        
+        <ion-toolbar >
+            <!-- <ion-buttons start>
+              <img src='../../assets/imgs/moim_head.png'width='50px' height='17px'>
+            </ion-buttons>
+            <ion-searchbar [ngModel]='query' (ionInput)="search($event)" placeholder='search'></ion-searchbar>
+            <ion-buttons end>
+              <button ion-button icon-only (click)='goSelectCategory()'>
+                <ion-icon name="menu"></ion-icon>
+              </button>
+            </ion-buttons> -->
+            <ion-row>
+              <ion-col col-2 no-padding text-center padding-top>
+                <ion-buttons >
+                  <img src='../../assets/imgs/moim_head.png'width='50px' height='17px'>
+                </ion-buttons>
+              </ion-col>
+              <ion-col col-9 no-padding>
+                <ion-searchbar [ngModel]='query' (ionChange)="search($event)" placeholder='search'></ion-searchbar>
+              </ion-col>
+              <ion-col col-1 no-padding text-center >
+                <ion-buttons class='padd1' >
+                  <button ion-button icon-only (click)='goSelectCategory()' class='padd1' >
+                    <ion-icon name="menu"></ion-icon>
+                  </button>
+                </ion-buttons>
+              </ion-col>
+            </ion-row>
+           
+          </ion-toolbar>
+  </ion-header> 
+
+
+  <ion-content >
+    
+  <div class="scrolling-wrapper" >
+
+      <ion-slides pager >
+
+         <ion-slide no-padding  text-wrap>
+            <section no-padding>
+              <img src="../assets/imgs/banner07.png" class="image-size" padding-top (click)='viewToday()'>
+                </section>
+          </ion-slide>
+         
+          <ion-slide  text-wrap>
+            <section no-padding>
+                <img src="../assets/imgs/banner06.png" class="image-size"  padding-top>
+                  <!-- </section> -->
+                </section>
+          </ion-slide>
+        
+          <ion-slide text-wrap>
+            <section no-padding>
+              <img src="../assets/imgs/banner05.png" class="image-size"  padding-top>
+                </section>
+          </ion-slide>
+          <ion-slide text-wrap>
+              <section no-padding>
+                <img src="../assets/imgs/banner08.png" class="image-size"  padding-top>
+                  </section>
+            </ion-slide>
+          <ion-slide  text-wrap>
+            <section no-padding>
+              <img src="../assets/imgs/banner01.png" class="image-size"  padding-top>
+                </section>
+          </ion-slide>
+        </ion-slides>
+  </div>
+  
+    <!-- <div padding><label padding-left>Recommend for you</label></div> -->
+<div class="scrolling-wrapper">
+    
+ 
+  <div class="card" *ngFor="let event of eventList | async;" transparent >
+    <div *ngIf="event.timestamp >= today">
+    <ion-card class='main' (click)="gotoEventView(event)" >
+        <ion-item color="{{event.category}}">
+            <ion-row text-center >
+                <ion-col col-3>
+                    <ion-avatar>
+                        <img src="../../assets/cat/{{event.category}}.png">
+                      </ion-avatar>
+                </ion-col>
+                <ion-col col-4 padding-top >
+                      <h2>{{event.eventname}}</h2>
+                </ion-col>
+              </ion-row>
+        </ion-item>
+     
+        <ion-card-content text-wrap class="{{event.category}}" >
+   
+         <ion-row padding-top>
+
+            <ion-col col-3 >
+               
+                   <div class="datetime" padding-left>
+                   <h3>{{event.date}}</h3>
+                   <!-- <h3>21 May 2019</h3> -->
+                      <h6>{{event.time}}</h6>
+                    </div>
+  
+          </ion-col>
+            <ion-col col-9 >
+              <div>
+               {{event.detail}}
+              </div>
+          </ion-col>
+          </ion-row>
+          
+          <ion-item  class="aaa">
+                <ion-row  no-padding>
+                  <ion-col col-6>
+                  </ion-col>
+                    <ion-col col-3 text-right padding-top>
+                          <div>{{event.owner}}</div>
+                          <div>
+                          <div style='font-size: 0.7em'> {{event.posttime}}</div>
+                        </div>
+                    </ion-col>
+                    <ion-col   text-right  padding-top  >
+                        <ion-avatar class='margin'>
+                            <img src="../../assets/avatar/{{event.avatar}}.png" >
+                          </ion-avatar>
+                       
+                    </ion-col>
+                  </ion-row>
+          </ion-item>
+
+        </ion-card-content>
+      
+        <ion-row>
+        </ion-row>
+      </ion-card>
+      </div>
+</div>
+   
+  </div>
+  <ion-fab right bottom transparent class="jello-vertical">
+      <button ion-fab class="carda"  color="c-pink" (click)="gotoCreateEvent()"><ion-icon name="add" large color="light"></ion-icon></button>
+      </ion-fab>
+    
+</ion-content>

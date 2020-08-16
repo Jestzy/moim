@@ -1,0 +1,309 @@
+<!--
+  Generated template for the EventAllPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar text-center color='primary'>
+    <ion-title>Events</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div no-padding>
+      <ion-segment [(ngModel)]='event'>
+        <ion-segment-button value='myEvents'>
+          My event 
+        </ion-segment-button>
+        <ion-segment-button value='Join'>
+           Moimed
+          </ion-segment-button>
+      </ion-segment>
+      
+  </div>
+
+  <div [ngSwitch]='event'>
+    <div *ngSwitchCase="'myEvents'">
+        <div *ngIf='empty$| async ; else Show' class="noevent">
+            <br>
+              <ion-label text-center text-wrap>
+                <h4>
+                Nothing here!
+                </h4>
+               
+                <h6>let's create new event !</h6>
+                </ion-label>
+                <img src="../../assets/imgs/notfound.png"  />
+       </div>
+            <ng-template #Show >
+              <div class="card" *ngFor="let event of eventList | async" no-padding>
+                <div *ngIf='event.timestamp < today; else NotExpire'>
+                  <ion-card class='main' (click)="gotoEventView(event)" >
+                      <ion-item color="expire">
+                          <ion-row text-center >
+                              <ion-col col-3>
+                                  <ion-avatar>
+                                      <img src="../../assets/cat/{{event.category}}.png">
+                                    </ion-avatar>
+                              </ion-col>
+                              <ion-col col-6 padding-top >
+                                    <h2>{{event.eventname}}</h2>
+                              </ion-col>
+                              <ion-col col-3 padding-top >
+                                  <img src="../../assets/imgs/expired.png">
+                                </ion-col>
+                            </ion-row>
+                      </ion-item>
+                   
+                      <ion-card-content text-wrap class="expire" >
+                 
+                       <ion-row padding-top>
+              
+                          <ion-col col-4 >
+                             
+                                 <div class="datetime" padding-left>
+                                 <h3>{{event.date}}</h3>
+                                    <h6>{{event.time}}</h6>
+                                  </div>
+                
+                        </ion-col>
+                          <ion-col col-8 >
+                            <div padding-top>
+                             {{event.detail}}
+                            </div>
+                        </ion-col>
+                        </ion-row>
+                        
+                        <ion-item  class="aaa">
+                              <ion-row  no-padding>
+                                <ion-col col-6>
+                                </ion-col>
+                                  <ion-col col-3 text-right padding-top>
+                                        <div>{{event.owner}}</div>
+                                        <div>
+                                        <div style='font-size: 0.7em'> {{event.posttime}}</div>
+                                      </div>
+                                  </ion-col>
+                                  <ion-col   text-right  padding-top  >
+                                      <ion-avatar class='margin'>
+                                          <img src="../../assets/avatar/{{event.avatar}}.png" >
+                                        </ion-avatar>
+                                     
+                                  </ion-col>
+                                </ion-row>
+                        </ion-item>
+              
+                      </ion-card-content>
+                    
+                      <ion-row>
+                      </ion-row>
+                    </ion-card>
+                </div>
+                <ng-template #NotExpire >
+                    <ion-card class='main' (click)="gotoEventView(event)" >
+                        <ion-item color="{{event.category}}">
+                            <ion-row text-center >
+                                <ion-col col-3>
+                                    <ion-avatar>
+                                        <img src="../../assets/cat/{{event.category}}.png">
+                                      </ion-avatar>
+                                </ion-col>
+                                <ion-col col-4 padding-top >
+                                      <h2>{{event.eventname}}</h2>
+                                </ion-col>
+                              </ion-row>
+                        </ion-item>
+                     
+                        <ion-card-content text-wrap class="{{event.category}}" >
+                   
+                         <ion-row padding-top>
+                
+                            <ion-col col-4 >
+                               
+                                   <div class="datetime" padding-left>
+                                   <h3>{{event.date}}</h3>
+                                      <h6>{{event.time}}</h6>
+                                    </div>
+                  
+                          </ion-col>
+                            <ion-col col-8 >
+                              <div padding-top>
+                               {{event.detail}}
+                              </div>
+                          </ion-col>
+                          </ion-row>
+                          
+                          <ion-item  class="aaa">
+                                <ion-row  no-padding>
+                                  <ion-col col-6>
+                                  </ion-col>
+                                    <ion-col col-3 text-right padding-top>
+                                          <div>{{event.owner}}</div>
+                                          <div>
+                                          <div style='font-size: 0.7em'> {{event.posttime}}</div>
+                                        </div>
+                                    </ion-col>
+                                    <ion-col   text-right  padding-top  >
+                                        <ion-avatar class='margin'>
+                                            <img src="../../assets/avatar/{{event.avatar}}.png" >
+                                          </ion-avatar>
+                                       
+                                    </ion-col>
+                                  </ion-row>
+                          </ion-item>
+                
+                        </ion-card-content>
+                      
+                        <ion-row>
+                        </ion-row>
+                      </ion-card>
+                  </ng-template>
+              </div>
+            </ng-template>
+
+    </div>
+    <div *ngSwitchCase="'Join'">
+        <div *ngIf='emptyLove$| async ; else Show' class="noevent">
+            <br>
+              <ion-label text-center text-wrap>
+                <h4>
+                Nothing here!
+                </h4>
+               
+                <h6>let's join new event !</h6>
+                </ion-label>
+                <img src="../../assets/imgs/notfound.png"  />
+       </div>
+            <ng-template #Show>
+              <div class="card" *ngFor="let event of eventloveList | async">
+                  <div *ngIf='event.timestamp < today; else NotExpire'>
+                      <ion-card class='main' (click)="gotoEventView(event)" >
+                          <ion-item color="expire">
+                              <ion-row text-center >
+                                  <ion-col col-3>
+                                      <ion-avatar>
+                                          <img src="../../assets/cat/{{event.category}}.png">
+                                        </ion-avatar>
+                                  </ion-col>
+                                  <ion-col col-6 padding-top >
+                                        <h2>{{event.eventname}}</h2>
+                                  </ion-col>
+                                  <ion-col col-3 padding-top >
+                                      <img src="../../assets/imgs/expired.png">
+                                    </ion-col>
+                                </ion-row>
+                          </ion-item>
+                       
+                          <ion-card-content text-wrap class="expire" >
+                     
+                           <ion-row padding-top>
+                  
+                              <ion-col col-4 >
+                                 
+                                     <div class="datetime" padding-left>
+                                     <h3>{{event.date}}</h3>
+                                        <h6>{{event.time}}</h6>
+                                      </div>
+                    
+                            </ion-col>
+                              <ion-col col-8 >
+                                <div padding-top>
+                                 {{event.detail}}
+                                </div>
+                            </ion-col>
+                            </ion-row>
+                            
+                            <ion-item  class="aaa">
+                                  <ion-row  no-padding>
+                                    <ion-col col-6>
+                                    </ion-col>
+                                      <ion-col col-3 text-right padding-top>
+                                            <div>{{event.owner}}</div>
+                                            <div>
+                                            <div style='font-size: 0.7em'> {{event.posttime}}</div>
+                                          </div>
+                                      </ion-col>
+                                      <ion-col   text-right  padding-top  >
+                                          <ion-avatar class='margin'>
+                                              <img src="../../assets/avatar/{{event.avatar}}.png" >
+                                            </ion-avatar>
+                                         
+                                      </ion-col>
+                                    </ion-row>
+                            </ion-item>
+                          </ion-card-content>        
+                          <ion-row>
+                          </ion-row>
+                        </ion-card>
+                    </div>
+                    <ng-template #NotExpire >
+                        <ion-card class='main' (click)="gotoEventView(event)">
+                            <ion-item color="{{event.category}}">
+                                <ion-row text-center>
+                                    <ion-col col-3>
+                                        <ion-avatar>
+                                            <img src="../../assets/cat/{{event.category}}.png">
+                                          </ion-avatar>
+                                    </ion-col>
+                                    <ion-col col-4 padding-top >
+                                          <h2>{{event.eventname}}</h2>
+                                    </ion-col>
+                                  </ion-row>
+                            </ion-item>
+                         
+                            <ion-card-content text-wrap class="{{event.category}}" >
+                       
+                             <ion-row padding-top>
+                    
+                                <ion-col col-4 >
+                                   
+                                       <div class="datetime" padding-left>
+                                       <h3>{{event.date}}</h3>
+                                          <h6>{{event.time}}</h6>
+                                        </div>
+                      
+                              </ion-col>
+                                <ion-col col-8 >
+                                  <div padding-top>
+                                   {{event.detail}}
+                                  </div>
+                              </ion-col>
+                              </ion-row>
+                              
+                              <ion-item  class="aaa">
+                                    <ion-row  no-padding>
+                                      <ion-col col-6>
+                                      </ion-col>
+                                        <ion-col col-3 text-right padding-top>
+                                              <div>{{event.owner}}</div>
+                                              <div>
+                                              <div style='font-size: 0.7em'> {{event.posttime}}</div>
+                                            </div>
+                                        </ion-col>
+                                        <ion-col   text-right  padding-top  >
+                                            <ion-avatar class='margin'>
+                                                <img src="../../assets/avatar/{{event.avatar}}.png" >
+                                              </ion-avatar>
+                                           
+                                        </ion-col>
+                                      </ion-row>
+                              </ion-item>
+                    
+                            </ion-card-content>
+                          
+                            <ion-row>
+                            </ion-row>
+                          </ion-card>
+                      </ng-template>
+                </div>
+            </ng-template>
+
+
+    </div>
+  </div>
+
+</ion-content>

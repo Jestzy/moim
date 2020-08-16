@@ -1,0 +1,51 @@
+page-feedback {
+
+    ion-textarea{
+        color : rgb(230, 227, 227);
+        background-color: rgb(184, 184, 184);
+        height: 200px;
+        border-radius: 10px;
+        margin: 0 0px 25px 0px;
+        // padding-top: 50% !important;
+      }
+      .scroll-content {
+        overflow-y: hidden;
+    }
+    ion-label{
+        color: color($colors, c-pink) !important;
+        
+    }
+    center{
+        img{
+            text-align: center;
+        }
+        title{
+            text-align: center;
+        }
+        .alert-title {
+            // color: white !important;
+            text-align: center !important;
+        }
+        text-align: center !important;
+    }
+    .alert-wrapper {
+     .alert-head{
+        .alert-title {
+          text-align: center;
+        }
+    }
+    }
+    alert-title {
+        text-align: center !important;
+      }
+      ion-alert{
+        .alert-head{
+            text-align: center !important;
+            .alert-title {
+                text-align: center !important;
+            }
+        }
+
+      }
+
+}

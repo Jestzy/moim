@@ -1,0 +1,30 @@
+page-chat {
+
+    // .scroll-content {
+    //     overflow-y: hidden;
+    // }
+    #online{
+    color: aquamarine;
+    }
+    tab-color{
+        background: linear-gradient(to top, #ff5f6d, #ffc371);
+    }
+    ion-navbar{
+        background: linear-gradient(to top, #ff5f6d, #ffc371);
+    }
+    img{
+        margin:0px;
+    }
+    ion-item, ion-list{
+       
+        padding: 0px 0px;
+//   background: linear-gradient(to top, #ff5f6d, #ffc371);
+    }
+    .inside{
+        height: 70px;
+        // background: #ebe8e8;
+    }
+    ion-icon{
+        size: 1px !important;
+    }
+}

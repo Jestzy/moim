@@ -1,0 +1,125 @@
+<!--
+  Generated template for the ChatPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header text-center>
+
+  <ion-navbar color='primary'>
+    <ion-title>Chat</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+ 
+<!-- <ion-list>
+  <ion-item-divider>Last Messages</ion-item-divider>
+  <ion-item *ngFor="let message of messageList$ | async" >
+  <div *ngIf='userProfile.key === message?.userToId ;  else Show' >
+    <div (click)="gotoChat(message.userFromId)" >
+      <ion-row>
+      <ion-col col-2>
+      <ion-avatar item-left> 
+          <img src="../../assets/avatar/{{message?.userFromProfile.avatar}}.png" alt="Avatar">
+      </ion-avatar>
+    </ion-col>
+         <ion-col col-10>
+         <div  item-right>
+        <h2>{{message?.userFromProfile.name}}</h2>
+        <h3>{{message?.content}}</h3>
+      </div>
+    </ion-col>
+    </ion-row>
+
+       </div>
+    </div>
+      <ng-template #Show >
+        <div (click)="gotoChat(message.userToId)" >
+            <ion-row>
+            <ion-col col-2>
+          <ion-avatar item-left> 
+              <img src="../../assets/avatar/{{message?.userToProfile.avatar}}.png" alt="Avatar">
+       </ion-avatar>
+      </ion-col>
+ 
+          <ion-col col-10>
+              <div  item-right>
+          <h2>{{message?.userToProfile.name}}</h2>
+          <h3>{{message?.content}}</h3>
+        </div>
+      </ion-col>
+    
+      </ion-row>
+      </div>
+      </ng-template>
+      
+  </ion-item>
+
+</ion-list> -->
+<ion-item-divider>Last Messages</ion-item-divider>
+<!-- <ion-item *ngFor="let message of lastMessages">
+  <div (click)="gotoChat(message?.otherUserKey)" >
+    <ion-row>
+    <ion-col col-2>
+    <ion-avatar item-left> 
+        <img src="../../assets/avatar/{{message?.otherUserAvatar}}.png" alt="Avatar">
+    </ion-avatar>
+  </ion-col>
+       <ion-col col-10>
+       <div  item-right>
+      <h2>{{message?.otherUserFirstName}}</h2>
+      <h3>{{message?.content}}</h3>
+    </div>
+  </ion-col>
+  </ion-row>
+
+     </div>
+</ion-item> -->
+
+  <ion-list no-lines no-padding>
+      <ion-item *ngFor="let message of lastMessages" no-padding>
+        <ion-item-sliding #sliding no-padding >
+            <ion-item class='inside' (click)="gotoChat(message?.otherUserKey)">
+                <ion-row>
+                <ion-col col-2>
+                <ion-avatar item-left> 
+                    <img src="../../assets/avatar/{{message?.otherUserAvatar}}.png" alt="Avatar" class='avatar'>
+                </ion-avatar>
+              </ion-col>
+                   <ion-col col-8>
+                   <div  item-right>
+                  <h2>{{message?.otherUserFirstName}}</h2>
+                 <p>{{message?.content}}</p>
+                 <!-- <div *ngIf='Object.values(onlineUsers).indexOf(43) > -1'></div> -->
+                </div>
+              </ion-col>
+              <ion-col col-2>
+                <!-- <div *ngFor ='let id of online'> -->
+                <div  *ngIf='doesExist(message.otherUserKey) ; else offline'>
+                  <ion-icon name="ios-water" color='secondary'></ion-icon>
+                </div>
+                <ng-template #offline>
+                  <div padding-top>
+                  <ion-icon name="ios-water" color='c-light'></ion-icon>
+                </div>
+                </ng-template>
+                <!-- </div> -->
+                </ion-col>
+            </ion-row>
+          
+               </ion-item>
+          <ion-item-options side="right">
+              <button ion-button color="c-pink" (click)='viewProfile(message?.otherUserKey)' >
+                <ion-icon name="person"></ion-icon>
+                Profile
+              </button>
+            </ion-item-options>
+        </ion-item-sliding>
+        </ion-item>
+      </ion-list>
+
+    
+  </ion-content>

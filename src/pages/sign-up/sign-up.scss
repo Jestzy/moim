@@ -1,0 +1,40 @@
+page-sign-up {
+    ion-navbar{
+        // background-color:  #324359;
+    }
+    ion-title{
+        color: white;
+    }
+ ion-content{
+     font-family: 'roboto';
+    // font-weight: bold;
+
+
+    //  src: 
+    // background: linear-gradient(to top, #232f41, #324359);
+   
+ }
+ ion-label{
+    font-weight: bold;
+    color: color($colors,primary);
+ }
+ ion-input {
+    color : rgb(230, 227, 227);
+    background-color: rgb(125, 125, 125);
+    border-radius: 500px;
+    margin: 0 0px 25px 0px;
+    // opacity: 0.8;
+  }
+ ion-toolbar{
+     text-align: center;
+ }
+ .head{
+    color: color($colors,primary);
+    // font-size: 50em;
+}
+.scroll-content {
+      overflow-y: hidden;
+  }
+ $text-input-placeholder-color : #ffc371;
+}
+

@@ -1,0 +1,89 @@
+<!--
+  Generated template for the SettingPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<!-- <ion-header text-center>
+
+  <ion-navbar>
+    <ion-title>Profile</ion-title>
+  </ion-navbar>
+
+</ion-header> -->
+
+
+
+<ion-content >
+  <div *ngIf="userProfile">
+  <div class="list card" >
+    <ion-item class="profile-item">
+      <div class="profile-picture big-profile-picture">
+        <img src="../../assets/avatar/{{userProfile.avatar}}.png">
+        <!-- <img src="https://img.mobiscroll.com/demos/mr-profile2.png"> -->
+      </div>
+      <div class='name'>
+      <h2 class="profile-name dark">{{userProfile.name}}</h2>
+      <div class="profile-info">{{userProfile.aboutme}}</div>
+      </div>
+      <ion-row padding-top class="name">
+      <ion-col col-4>
+        <h2>{{count}}</h2>
+        <h4>event</h4>
+      </ion-col>
+      <ion-col col-4 class='seperate'>
+         <h1>|</h1>
+        </ion-col>
+        <ion-col col-4>
+          <!-- <div *ngFor="count$"> -->
+            <h2>{{count2}}</h2>
+          <!-- </div> -->
+          <h4>join</h4>
+          </ion-col>
+          </ion-row>
+    </ion-item>
+    <ion-list no-lines>
+    <!-- <ion-item > -->
+        <button ion-item  full   (click)="gotoEdit()">
+            Edit Profile
+           </button>
+   
+ 
+        <button ion-item full   (click)="gotoReport()">
+           Feedback
+           </button>
+           <button ion-item full   (click)="gotoPrivacy()">
+            Policy Privacy
+           </button>
+   
+          <button ion-item  full   (click)="gotoAbout()">
+              About MOIM
+             </button>
+  </ion-list>
+  <ion-list>
+      <!-- <ion-item > -->
+        <!-- <button ion-button  full  color="c-blue" (click)="logout()">
+            Privacy
+           </button>
+   
+          <button ion-button  full  color="c-blue" (click)="logout()">
+              About MOIM
+             </button> -->
+      <!-- </ion-item> -->
+    </ion-list>
+    <ion-list padding-top text-center>
+        <!-- <ion-item > -->
+          <!-- <button ion-button  full large  color="c-pink" (click)="logout()" padding>
+              Log out
+             </button> -->
+             <button 
+             ion-button round color="c-pink"   (click)="logout()" padding>
+             Sign out
+             
+             </button>
+     
+        <!-- </ion-item> -->
+      </ion-list>
+  </div>
+  </div>
+</ion-content>

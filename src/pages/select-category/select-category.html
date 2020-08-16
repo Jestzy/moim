@@ -1,0 +1,137 @@
+<!--
+  Generated template for the SelectCategoryPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<!-- <ion-header>
+
+  <ion-navbar>
+    <ion-title>select-category</ion-title>
+  </ion-navbar>
+
+</ion-header> -->
+
+
+<ion-content padding>
+  <button ion-button clear icon-only  top right edge (click)="backToMain()">
+  <ion-icon name="close" color="dark"></ion-icon>
+</button>
+<section text-center color='c-pink'>
+    <h4>Filter by activity</h4>
+  </section>
+
+ <!-- <ion-grid>
+    <ion-row>
+       
+      <ion-col col-6>
+          
+        <ion-card text-center padding color='primary' class="card" (click)="gotoEventByCat('Eating')" >
+          
+           <img src="../../assets/cat/Eating.png"/>
+          
+          </ion-card>
+          <div text-center>
+               <ion-label>Eating</ion-label>
+          </div>
+    
+      </ion-col>
+   
+      <ion-col col-6>
+          <ion-card text-center padding color='primary' (click)="gotoEventByCat('Entertainment')">
+                <img src="../../assets/cat-icon/entertain-01.png"/>
+         
+            </ion-card>
+            <div text-center>
+                <ion-label>Entertainment</ion-label>
+           </div>
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col col-6>
+            <ion-card text-center padding color='primary' (click)="gotoEventByCat('Excercise')">
+                <img src="../../assets/cat-icon/excercise-01.png">
+             
+              </ion-card>
+              <div text-center>
+                <ion-label>Excercise</ion-label>
+           </div>
+          </ion-col>
+      
+                <ion-col col-6>
+                    <ion-card text-center padding color='primary' (click)="gotoEventByCat('Education')">
+                        <img src="../../assets/cat-icon/learn-01.png"/>
+                      
+                      </ion-card>
+                      <div text-center>
+                        <ion-label>Education</ion-label>
+                   </div>
+                  </ion-col>
+           
+      </ion-row>
+      <ion-row>
+          <ion-col col-6>
+              <ion-card text-center padding color='primary' (click)="gotoEventByCat('Shopping')">
+                  <img src="../../assets/imgs/icon_shopping_bold-01.png"/>
+                
+                </ion-card>
+                <div text-center>
+                    <ion-label>Shopping</ion-label>
+               </div>
+            </ion-col>
+       
+                  <ion-col col-6>
+                      <ion-card text-center padding color='primary' (click)="gotoEventByCat('Travel')">
+                          <img src="../../assets/imgs/icon_travelling_bold-01.png" />
+                         
+                        </ion-card>
+                        <div text-center>
+                            <ion-label>Travel</ion-label>
+                       </div>
+                    </ion-col>
+          
+        </ion-row>
+     
+  </ion-grid> -->
+<ion-grid text-center padding-top>
+    <ion-row>
+        <ion-col col-6>
+            <div class='dot scale-up-center'  (click)="gotoEventByCat('Eating')"> 
+                <img src="../../assets/cat/Eating.png" />
+            </div>
+            <ion-label>Eating</ion-label>
+        </ion-col>
+        <ion-col col-6>
+            <div class='dot scale-up-center'  (click)="gotoEventByCat('Entertainment')">
+                <img src="../../assets/cat/Entertainment.png" /></div>
+            <ion-label>Entertainment</ion-label>
+        </ion-col>
+    </ion-row>
+    <ion-row padding-top>
+            <ion-col col-6>
+                <div class='dot scale-up-center'  (click)="gotoEventByCat('Excercise')">
+                    <img src="../../assets/cat/Excercise.png" /></div>
+                <ion-label>Excercise</ion-label>
+            </ion-col>
+            <ion-col col-6>
+                <div class='dot scale-up-center'  (click)="gotoEventByCat('Education')">
+                    <img src="../../assets/cat/Education.png" /></div>
+                <ion-label>Education</ion-label>
+                </ion-col>
+    </ion-row>
+    <ion-row padding-top>
+            <ion-col col-6>
+                <div class='dot scale-up-center'  (click)="gotoEventByCat('Shopping')">
+                    <img src="../../assets/cat/Shopping.png" /></div>
+                <ion-label>Shopping</ion-label>
+            </ion-col>
+            <ion-col col-6>
+                <div class='dot scale-up-center'  (click)="gotoEventByCat('Travel')">
+                    <img src="../../assets/cat/Travel.png" /></div>
+                <ion-label>Travel</ion-label>
+                </ion-col>
+    </ion-row>
+
+</ion-grid>
+ 
+</ion-content>

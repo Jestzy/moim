@@ -1,0 +1,93 @@
+page-event-all {
+    // ion-navbar{
+    //     background-color: color($colors, primary);
+    // }
+    // .segment{
+      
+    //     overflow-y: hidden;
+    
+    // }
+    ion-content{
+      font-family: 'roboto' !important;
+    }
+    ion-card {
+        border-radius: 200px;
+        border-radius: 25px !important;
+        background-color: rgb(255, 255, 255) !important;
+       
+        }
+        h2{
+          color: white !important;
+        }
+        .main{
+          box-shadow: 0 4px 2px 0 rgba(0, 0, 0, 0.2) !important;
+        }
+        .datetime{
+          font-weight: bold !important;
+           color: #ea6852 !important;
+           h3, h6{
+             color: #ea6852 !important;
+           }
+         }
+        .slide-title {
+          margin-top: 2.8rem;
+          color: rgb(56, 58, 59);
+        }
+        #text{
+          color: aliceblue;
+        }
+        // ion-fab{
+        //   box-shadow: 0 4px 2px 0 rgba(0, 0, 0, 0.2) !important;
+        // }
+        .carda{
+          box-shadow: 0 4px 2px 0 rgba(0, 0, 0, 0.2) !important;
+        }
+        .noevent{
+          color: color($colors, c-pink);
+        }
+        .Education{
+          background-color: #80cecc !important;
+          ion-item{
+            background-color: #80cecc !important;
+          }
+        }
+        .Excercise{
+          background-color: #d5ad97 !important;
+          ion-item{
+            background-color: #d5ad97  !important;
+          }
+        }
+         
+        .Shopping{
+          background-color: #a4cca3 !important;
+          ion-item{
+            background-color: #a4cca3  !important;
+          }
+        }
+        .Eating{
+          background-color: #ec9bad !important;
+          ion-item{
+            background-color: #ec9bad  !important;
+          }
+        }
+        .Travel{
+          background-color: #efd8bd !important;
+          ion-item{
+            background-color: #efd8bd  !important;
+          }
+        }
+        .Entertainment{
+          background-color: #f7c986!important;
+          ion-item{
+            background-color: #f7c986  !important;
+          }
+        }
+        .expire{
+          background-color: #d3d3d3 !important;
+          ion-item{
+            background-color: #d3d3d3 !important;
+          }
+
+        }
+
+}
